@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: SERVICE-PROVIDER
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: ust
+
+server:
+  port: 8088  # This will assign a random available port
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    ip-address: 127.0.0.1
+    instanceId: ${spring.application.name}:${random.value}
